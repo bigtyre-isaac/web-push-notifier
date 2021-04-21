@@ -71,7 +71,8 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
 // Connect to AMQP to receive messages
-amqp.connect(process.env.AMQP_HOST, function(error0, connection) {
+var rmqUri = process.env.AMQP_HOST;
+amqp.connect(rmqUri, function(error0, connection) {
   if (error0) {
     throw error0;
   }
